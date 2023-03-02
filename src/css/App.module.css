@@ -125,20 +125,19 @@ body {
   margin-right: 1%;
 }
 
-.closeIMG {
+.personalCloseIMG {
   height: 70%;
   margin-left: 24.6%;
   transition: ease 0.2s;
 }
 
-.closeIMG:hover {
+.personalCloseIMG:hover {
   cursor: pointer;
   filter: brightness(0.8);
 }
 
 .personalNavbar {
-  margin: auto;
-  margin-left: 200px;
+  padding: 5px;
   height: 70%;
   transition: ease 0.2s;
 }
@@ -194,6 +193,218 @@ body {
   font-family: PixeloidMono;
   font-size: 1.2em;
   font-weight: 600;
+}
+
+.experienceNavbar {
+  padding: 5px;
+  height: 70%;
+  transition: ease 0.2s;
+}
+
+.experienceNavbar:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+.experienceContainer {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(32, 79, 167);
+  border-radius: 14px 14px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px -9px 12px 3px rgb(27, 64, 133) inset, 3px 24px 12px -17px rgb(87, 129, 207) inset;
+  position: fixed;
+  top: 4%;
+  left: 34%;
+  animation: openPersonal 0.5s ease;
+}
+
+.experienceInfoContainer {
+  width: 95%;
+  height: 84%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 12px 3px rgb(87, 129, 207), -1px 2px 47px -21px rgba(0, 0, 0, 0.75) inset;
+}
+
+.experienceHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  color: white;
+  font-size: 1.5em;
+  font-family: PixeloidMono;
+}
+
+.experienceIMG {
+  height: 70%;
+  margin-left: 3%;
+  margin-right: 1%;
+}
+
+.experienceCloseIMG {
+  height: 70%;
+  margin-left: 39%;
+  transition: ease 0.2s;
+}
+
+.experienceCloseIMG:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+.experienceInfo {
+  height: 100%;
+  width: 88%;
+}
+
+.experienceList {
+  font-family: PixeloidMono;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.compName {
+  font-size: 0.9em;
+  color: rgb(66, 66, 66);
+}
+
+.experienceDesc {
+  font-size: 1em;
+  color: rgb(39, 39, 39);
+}
+
+.experienceTime {
+  font-size: 0.6em;
+  color: rgb(66, 66, 66);
+}
+
+.educationNavbar {
+  padding: 5px;
+  height: 70%;
+  transition: ease 0.2s;
+}
+
+.educationNavbar:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+.navbarElements {
+  width: 78%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 1%;
+}
+
+.educationNavbar {
+  padding: 5px;
+  height: 70%;
+  transition: ease 0.2s;
+}
+
+.educationNavbar:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+.educationContainer {
+  width: 600px;
+  height: 400px;
+  background-color: rgb(32, 79, 167);
+  border-radius: 14px 14px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px -9px 12px 3px rgb(27, 64, 133) inset, 3px 24px 12px -17px rgb(87, 129, 207) inset;
+  position: fixed;
+  top: 50%;
+  left: 5%;
+  animation: openPersonal 0.5s ease;
+}
+
+.educationInfoContainer {
+  width: 95%;
+  height: 84%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 12px 3px rgb(87, 129, 207), -1px 2px 47px -21px rgba(0, 0, 0, 0.75) inset;
+}
+
+.educationHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  color: white;
+  font-size: 1.5em;
+  font-family: PixeloidMono;
+}
+
+.educationIMG {
+  height: 70%;
+  margin-left: 3%;
+  margin-right: 1%;
+}
+
+.educationCloseIMG {
+  height: 70%;
+  margin-left: 60%;
+  transition: ease 0.2s;
+}
+
+.educationCloseIMG:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+.educationInfo {
+  height: 100%;
+  width: 92%;
+}
+
+.educationList {
+  font-family: PixeloidMono;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.compName {
+  font-size: 0.9em;
+  color: rgb(66, 66, 66);
+}
+
+.experienceDesc {
+  font-size: 1em;
+  color: rgb(39, 39, 39);
+}
+
+.experienceTime {
+  font-size: 0.6em;
+  color: rgb(66, 66, 66);
+}
+
+.activeNavbar {
+  background-color: rgb(163, 207, 218);
+  padding: 5px;
+  border-radius: 10px;
 }
 
 @keyframes openPersonal {
