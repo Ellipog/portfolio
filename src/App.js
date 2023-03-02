@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from "./css/App.module.css";
+import React, { useState } from "react";
 
 function App() {
+  const [clock, setClock] = useState(Date.now());
+
+  let hours = ("0" + new Date(clock).getHours()).slice(-2);
+  let minutes = ("0" + new Date(clock).getMinutes()).slice(-2);
+
+  setInterval(() => setClock(Date.now()), 100);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <div className={styles.clock}>
+        <div className={styles.time}>{hours}:{minutes}</div>
+      </div>
+      <div className={styles.navBar}></div>
     </div>
   );
 }
