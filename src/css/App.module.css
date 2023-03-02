@@ -1,4 +1,10 @@
-html, body {
+@font-face {
+  font-family: PixeloidMono;
+  src: url("../font/PixeloidMono.ttf");
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -18,16 +24,54 @@ html, body {
 
 .time {
   color: rgb(255, 255, 255);
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   font-weight: 700;
+  font-family: PixeloidMono;
 }
 
 .navBar {
   position: fixed;
+  display: flex;
+  flex-direction: row;
   bottom: 0;
   height: 5%;
   width: 100%;
   background-color: rgb(32, 79, 167);
   z-index: -1;
-  box-shadow: 1px 24px 5px -16px rgb(60, 111, 204) inset;
+  box-shadow: 1px 22px 5px -16px rgb(70, 119, 209) inset, 1px -22px 5px -16px rgb(27, 64, 133) inset;
+}
+
+.navBarRight {
+  position: absolute;
+  right: 0%;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(55, 147, 190);
+  box-shadow: 1px 22px 5px -16px rgb(70, 181, 209) inset, 1px -22px 5px -16px rgb(27, 103, 133) inset, 20px 2px 5px -16px rgb(70, 181, 209) inset;
+}
+
+.navBarLeft {
+  position: absolute;
+  left: 0%;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: rgb(34, 136, 65);
+  box-shadow: 1px 22px 5px -16px rgb(28, 100, 46) inset, 1px -22px 5px -16px rgb(18, 99, 31) inset, -20px 2px 5px -16px rgb(50, 163, 55) inset;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: PixeloidMono;
+  border-radius: 0 16px 16px 0;
+  gap: 15px;
+}
+
+.navBarLeft img {
+  height: 60%;
+  margin-left: 20px;
 }
