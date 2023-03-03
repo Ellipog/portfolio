@@ -421,8 +421,8 @@ body {
   align-items: center;
   box-shadow: 1px -9px 12px 3px rgb(27, 64, 133) inset, 3px 24px 12px -17px rgb(87, 129, 207) inset;
   position: fixed;
-  top: 40%;
-  right: 14%;
+  top: 14%;
+  right: 23%;
   animation: openPersonal 0.5s ease;
 }
 
@@ -446,6 +446,69 @@ body {
   font-family: PixeloidMono;
   font-size: 1.4em;
   font-weight: 600;
+}
+
+.skillsApp {
+  top: 31%;
+  left: 1%;
+}
+
+.skillsContainer {
+  width: 550px;
+  height: 350px;
+  background-color: rgb(32, 79, 167);
+  border-radius: 14px 14px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px -9px 12px 3px rgb(27, 64, 133) inset, 3px 24px 12px -17px rgb(87, 129, 207) inset;
+  position: fixed;
+  top: 52%;
+  right: 14%;
+  animation: openPersonal 0.5s ease;
+}
+
+.skillsCloseIMG {
+  height: 70%;
+  margin-left: 67%;
+  transition: ease 0.2s;
+}
+
+.skillsCloseIMG:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+.skillsInfo {
+  height: 100%;
+  width: 92%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+}
+
+.skillsInfo img {
+  justify-self: center;
+  width: 60px;
+}
+
+.skillsItem {
+  font-family: PixeloidMono;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: rgb(27, 103, 133);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillsItem p {
+  margin-bottom: 10%;
 }
 
 @keyframes openPersonal {

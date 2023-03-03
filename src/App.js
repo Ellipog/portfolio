@@ -7,6 +7,7 @@ import experienceIMG from "./img/experience.png";
 import educationIMG from "./img/education.png";
 import projectsIMG from "./img/projects.png";
 import contactIMG from "./img/contact.png";
+import skillsIMG from "./img/skills.png";
 import shield from "./img/shield.png";
 import close from "./img/close.png";
 import elliotProfile from "./img/elliotProfile.jpg";
@@ -14,6 +15,16 @@ import github from "./img/github.png";
 import linkedin from "./img/linkedin.png";
 import mail from "./img/mail.png";
 import discord from "./img/discord.png";
+import html from "./img/html.svg";
+import css from "./img/css.png";
+import javascript from "./img/javascript.png";
+import react from "./img/react.png";
+import node from "./img/node.png";
+import lua from "./img/lua.png";
+import git from "./img/git.png";
+import firebase from "./img/firebase.png";
+import sql from "./img/sql.png";
+import php from "./img/php.png";
 
 function App() {
   const [clock, setClock] = useState(Date.now());
@@ -22,6 +33,7 @@ function App() {
   const [education, setEducation] = useState(true);
   const [projects, setProjects] = useState(true);
   const [contact, setContact] = useState(true);
+  const [skills, setSkills] = useState(true);
   const [drag, setDrag] = useState("");
   const [grab, setGrab] = useState("");
 
@@ -44,6 +56,7 @@ function App() {
           <img className={`${styles.educationApp} ${styles.app}`} src={educationIMG} alt="Education" onClick={() => setEducation(!education)} />
           <img className={`${styles.projectsApp} ${styles.app}`} src={projectsIMG} alt="Projects" onClick={() => setProjects(!projects)} />
           <img className={`${styles.contactApp} ${styles.app}`} src={contactIMG} alt="Contact" onClick={() => setContact(!contact)} />
+          <img className={`${styles.skillsApp} ${styles.app}`} src={skillsIMG} alt="Skills" onClick={() => setSkills(!skills)} />
         </div>
         {profile ? (
           <Draggable>
@@ -150,6 +163,46 @@ function App() {
             </div>
           </Draggable>
         ) : null}
+        {contact ? (
+          <Draggable>
+            <div
+              className={`${drag === "contact" ? styles.dragged : null} ${grab === "contact" ? styles.grab : null} ${styles.contactContainer}`}
+              onMouseDownCapture={() => {
+                setDrag("contact");
+                setGrab("contact");
+              }}
+              onMouseUpCapture={() => setGrab("")}
+            >
+              <div className={styles.pageHeader}>
+                <img className={styles.pageIMG} src={contactIMG} alt="Contact" />
+                <p>Contact</p>
+                <img className={styles.contactCloseIMG} src={close} alt="Close" onClick={() => setContact(!contact)} />
+              </div>
+              <div className={styles.infoContainer}>
+                <div className={styles.contactInfo}>
+                  <p className={styles.infoList}>
+                    <span className={styles.contactHD}>CONTACT ME HERE:</span>
+                    <br />
+                    <br />
+                    <a className={styles.links} href="https://www.linkedin.com/in/elliot-strand-aaen/" target="_blank">
+                      <img src={linkedin} /> &nbsp;LINKEDIN
+                    </a>
+                    <a className={styles.links} href="mailto:elliotsaaen@gmail.com" target="_blank">
+                      <img src={mail} /> &nbsp;MAIL
+                    </a>
+                    <a className={styles.links} href="https://discord.com/users/323426171947581441" target="_blank">
+                      <img src={discord} /> &nbsp;DISCORD
+                    </a>
+                    <a className={styles.links} href="https://github.com/Ellipog" target="_blank">
+                      <img src={github} /> &nbsp;GITHUB
+                    </a>
+                    <br />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Draggable>
+        ) : null}
         {projects ? (
           <Draggable>
             <div
@@ -193,41 +246,63 @@ function App() {
             </div>
           </Draggable>
         ) : null}
-        {contact ? (
+        {skills ? (
           <Draggable>
             <div
-              className={`${drag === "contact" ? styles.dragged : null} ${grab === "contact" ? styles.grab : null} ${styles.contactContainer}`}
+              className={`${drag === "skills" ? styles.dragged : null} ${grab === "skills" ? styles.grab : null} ${styles.skillsContainer}`}
               onMouseDownCapture={() => {
-                setDrag("contact");
-                setGrab("contact");
+                setDrag("skills");
+                setGrab("skills");
               }}
               onMouseUpCapture={() => setGrab("")}
             >
               <div className={styles.pageHeader}>
-                <img className={styles.pageIMG} src={contactIMG} alt="Contact" />
-                <p>Contact</p>
-                <img className={styles.contactCloseIMG} src={close} alt="Close" onClick={() => setContact(!contact)} />
+                <img className={styles.pageIMG} src={skillsIMG} alt="Skills" />
+                <p>Skills</p>
+                <img className={styles.skillsCloseIMG} src={close} alt="Close" onClick={() => setContact(!skills)} />
               </div>
               <div className={styles.infoContainer}>
-                <div className={styles.contactInfo}>
-                  <p className={styles.infoList}>
-                    <span className={styles.contactHD}>CONTACT ME HERE:</span>
-                    <br />
-                    <br />
-                    <a className={styles.links} href="https://www.linkedin.com/in/elliot-strand-aaen/" target="_blank">
-                      <img src={linkedin} /> &nbsp;LINKEDIN
-                    </a>
-                    <a className={styles.links} href="mailto:elliotsaaen@gmail.com" target="_blank">
-                      <img src={mail} /> &nbsp;MAIL
-                    </a>
-                    <a className={styles.links} href="https://discord.com/users/323426171947581441" target="_blank">
-                      <img src={discord} /> &nbsp;DISCORD
-                    </a>
-                    <a className={styles.links} href="https://github.com/Ellipog" target="_blank">
-                      <img src={github} /> &nbsp;GITHUB
-                    </a>
-                    <br />
-                  </p>
+                <div className={styles.skillsInfo}>
+                  <div className={styles.skillsItem}>
+                    <p>HTML</p>
+                    <img src={html} />
+                  </div>
+                  <div className={styles.skillsItem}>
+                    <p>CSS</p>
+                    <img src={css} />
+                  </div>
+                  <div className={styles.skillsItem}>
+                    <p>JAVASCRIPT</p>
+                    <img src={javascript} />
+                  </div>
+                  <div className={styles.skillsItem}>
+                    <p>REACT</p>
+                    <img src={react} />
+                  </div>
+                  <div className={styles.skillsItem}>
+                    <p>NODE</p>
+                    <img src={node} />
+                  </div>
+                  <div className={styles.skillsItem}>
+                    <p>LUA</p>
+                    <img src={lua} />
+                  </div>
+                  <div className={styles.skillsItem}>
+                    <p>GIT</p>
+                    <img src={git} />
+                  </div>
+                  <div className={styles.skillsItem}>
+                    <p>FIREBASE</p>
+                    <img src={firebase} />
+                  </div>
+                  <div className={styles.skillsItem}>
+                    <p>SQL</p>
+                    <img src={sql} />
+                  </div>
+                  <div className={styles.skillsItem}>
+                    <p>PHP</p>
+                    <img src={php} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -245,6 +320,7 @@ function App() {
           <img className={`${education ? styles.activeNavbar : null} ${styles.navbarIcon}`} src={educationIMG} alt="Education" onClick={() => setEducation(!education)} />
           <img className={`${projects ? styles.activeNavbar : null} ${styles.navbarIcon}`} src={projectsIMG} alt="Projects" onClick={() => setProjects(!projects)} />
           <img className={`${contact ? styles.activeNavbar : null} ${styles.navbarIcon}`} src={contactIMG} alt="Contact" onClick={() => setContact(!contact)} />
+          <img className={`${skills ? styles.activeNavbar : null} ${styles.navbarIcon}`} src={skillsIMG} alt="Skills" onClick={() => setSkills(!skills)} />
         </div>
         <div className={styles.navBarRight}>
           <div className={styles.time}>
