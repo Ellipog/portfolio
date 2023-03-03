@@ -42,6 +42,7 @@ body {
   width: 100%;
   background-color: rgb(32, 79, 167);
   box-shadow: 1px 22px 5px -16px rgb(70, 119, 209) inset, 1px -22px 5px -16px rgb(27, 64, 133) inset;
+  z-index: 20;
 }
 
 .navBarRight {
@@ -91,7 +92,7 @@ body {
   align-items: center;
   box-shadow: 1px -9px 12px 3px rgb(27, 64, 133) inset, 3px 24px 12px -17px rgb(87, 129, 207) inset;
   position: fixed;
-  top: 4%;
+  top: 2%;
   left: 5%;
   animation: openPersonal 0.5s ease;
 }
@@ -195,6 +196,11 @@ body {
   font-weight: 600;
 }
 
+.profileApp {
+  top: 2%;
+  left: 1%;
+}
+
 .experienceNavbar {
   padding: 5px;
   height: 70%;
@@ -217,9 +223,25 @@ body {
   align-items: center;
   box-shadow: 1px -9px 12px 3px rgb(27, 64, 133) inset, 3px 24px 12px -17px rgb(87, 129, 207) inset;
   position: fixed;
-  top: 4%;
-  left: 34%;
+  top: 28%;
+  left: 24%;
   animation: openPersonal 0.5s ease;
+}
+
+.experienceApp {
+  top: 7%;
+  left: 1%
+}
+
+.app {
+  position: fixed;
+  height: 38px;
+  transition: ease 0.2s;
+}
+
+.app:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
 }
 
 .experienceInfoContainer {
@@ -321,7 +343,7 @@ body {
 
 .educationContainer {
   width: 600px;
-  height: 400px;
+  height: 350px;
   background-color: rgb(32, 79, 167);
   border-radius: 14px 14px 4px 4px;
   display: flex;
@@ -330,8 +352,8 @@ body {
   align-items: center;
   box-shadow: 1px -9px 12px 3px rgb(27, 64, 133) inset, 3px 24px 12px -17px rgb(87, 129, 207) inset;
   position: fixed;
-  top: 50%;
-  left: 5%;
+  top: 55%;
+  left: 8%;
   animation: openPersonal 0.5s ease;
 }
 
@@ -386,25 +408,38 @@ body {
   font-weight: 600;
 }
 
-.compName {
+.schoolName {
   font-size: 0.9em;
   color: rgb(66, 66, 66);
 }
 
-.experienceDesc {
+.educationDesc {
   font-size: 1em;
   color: rgb(39, 39, 39);
 }
 
-.experienceTime {
+.educationTime {
   font-size: 0.6em;
   color: rgb(66, 66, 66);
+}
+
+.educationApp {
+  top: 13%;
+  left: 1%
 }
 
 .activeNavbar {
   background-color: rgb(163, 207, 218);
   padding: 5px;
   border-radius: 10px;
+}
+
+.dragged {
+  z-index: 1;
+}
+
+.grab:hover {
+  cursor: grabbing;
 }
 
 @keyframes openPersonal {
