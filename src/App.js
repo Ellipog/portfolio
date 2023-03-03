@@ -1,21 +1,27 @@
 import styles from "./css/App.module.css";
 import React, { useState, useEffect } from "react";
-import Draggable from 'react-draggable';
+import Draggable from "react-draggable";
 import startLogo from "./img/startLogo.png";
 import personal from "./img/personal.png";
 import experienceIMG from "./img/experience.png";
 import educationIMG from "./img/education.png";
 import projectsIMG from "./img/projects.png";
+import contactIMG from "./img/contact.png";
 import shield from "./img/shield.png";
 import close from "./img/close.png";
 import elliotProfile from "./img/elliotProfile.jpg";
+import github from "./img/github.png";
+import linkedin from "./img/linkedin.png";
+import mail from "./img/mail.png";
+import discord from "./img/discord.png";
 
 function App() {
   const [clock, setClock] = useState(Date.now());
   const [profile, setProfile] = useState(true);
-  const [experience, setExperience] = useState(false);
-  const [education, setEducation] = useState(false);
-  const [projects, setProjects] = useState(false);
+  const [experience, setExperience] = useState(true);
+  const [education, setEducation] = useState(true);
+  const [projects, setProjects] = useState(true);
+  const [contact, setContact] = useState(true);
   const [drag, setDrag] = useState("");
   const [grab, setGrab] = useState("");
 
@@ -36,111 +42,195 @@ function App() {
           <img className={`${styles.profileApp} ${styles.app}`} src={personal} alt="Personal" onClick={() => setProfile(!profile)} />
           <img className={`${styles.experienceApp} ${styles.app}`} src={experienceIMG} alt="Experience" onClick={() => setExperience(!experience)} />
           <img className={`${styles.educationApp} ${styles.app}`} src={educationIMG} alt="Education" onClick={() => setEducation(!education)} />
+          <img className={`${styles.projectsApp} ${styles.app}`} src={projectsIMG} alt="Projects" onClick={() => setProjects(!projects)} />
+          <img className={`${styles.contactApp} ${styles.app}`} src={contactIMG} alt="Contact" onClick={() => setContact(!contact)} />
         </div>
         {profile ? (
           <Draggable>
-          <div className={`${drag === "personal" ? styles.dragged : null} ${grab === "personal" ? styles.grab : null} ${styles.profileContainer}`} onMouseDownCapture={() => {setDrag("personal"); setGrab("personal");}} onMouseUpCapture={() => setGrab("")}>
-            <div className={styles.personalHeader}>
-              <img className={styles.personalIMG} src={personal} alt="Personal" />
-              <p>Elliot Strand Aaen</p>
-              <img className={styles.personalCloseIMG} src={close} alt="Close" onClick={() => setProfile(!profile)} />
-            </div>
-            <div className={styles.profileInfoContainer}>
-              <div className={styles.profileIMG}>
-                <p>Elliot.png</p>
-                <img src={elliotProfile} alt="Elliot.png" />
+            <div
+              className={`${drag === "personal" ? styles.dragged : null} ${grab === "personal" ? styles.grab : null} ${styles.profileContainer}`}
+              onMouseDownCapture={() => {
+                setDrag("personal");
+                setGrab("personal");
+              }}
+              onMouseUpCapture={() => setGrab("")}
+            >
+              <div className={styles.pageHeader}>
+                <img className={styles.pageIMG} src={personal} alt="Personal" />
+                <p>Elliot Strand Aaen</p>
+                <img className={styles.personalCloseIMG} src={close} alt="Close" onClick={() => setProfile(!profile)} />
               </div>
-              <div className={styles.profileInfo}>
-                <p className={styles.profileAboutHD}>About:</p>
-                <p className={styles.profileAbout}>
-                  - Web Developer
-                  <br />- Programmer
-                  <br />- Student
-                  <br />- 17 years old
-                </p>
+              <div className={styles.infoContainer}>
+                <div className={styles.profileIMG}>
+                  <p>Elliot.png</p>
+                  <img src={elliotProfile} alt="Elliot.png" />
+                </div>
+                <div className={styles.profileInfo}>
+                  <p className={styles.profileAboutHD}>About:</p>
+                  <p className={styles.profileAbout}>
+                    - Web Developer
+                    <br />- Programmer
+                    <br />- Student
+                    <br />- 17 years old
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
           </Draggable>
         ) : null}
         {experience ? (
           <Draggable>
-          <div className={`${drag === "experience" ? styles.dragged : null} ${grab === "experience" ? styles.grab : null} ${styles.experienceContainer}`} onMouseDownCapture={() => {setDrag("experience"); setGrab("experience");}} onMouseUpCapture={() => setGrab("")}>
-            <div className={styles.experienceHeader}>
-              <img className={styles.experienceIMG} src={experienceIMG} alt="Experience" />
-              <p>Experience</p>
-              <img className={styles.experienceCloseIMG} src={close} alt="Close" onClick={() => setExperience(!experience)} />
-            </div>
-            <div className={styles.experienceInfoContainer}>
-              <div className={styles.experienceInfo}>
-                <p className={styles.experienceList}>
-                  - Caretaker <span className={styles.compName}>Greverud Sykehjem</span>
-                  <br />
-                  <span className={styles.experienceTime}>2022 JUL - 2022 AUG</span>
-                  <br />
-                  <br />- Technical Support <span className={styles.compName}>Intility</span>
-                  <br />
-                  <span className={styles.experienceDesc}>Department: Setup</span>
-                  <br />
-                  <span className={styles.experienceTime}>2022 OKT - 2022 NOV</span>
-                  <br />
-                  <br />- Caretaker <span className={styles.compName}>Greverud Sykehjem</span>
-                  <br />
-                  <span className={styles.experienceTime}>2022 DEC - 2022 DEC</span>
-                </p>
+            <div
+              className={`${drag === "experience" ? styles.dragged : null} ${grab === "experience" ? styles.grab : null} ${styles.experienceContainer}`}
+              onMouseDownCapture={() => {
+                setDrag("experience");
+                setGrab("experience");
+              }}
+              onMouseUpCapture={() => setGrab("")}
+            >
+              <div className={styles.pageHeader}>
+                <img className={styles.pageIMG} src={experienceIMG} alt="Experience" />
+                <p>Experience</p>
+                <img className={styles.experienceCloseIMG} src={close} alt="Close" onClick={() => setExperience(!experience)} />
+              </div>
+              <div className={styles.infoContainer}>
+                <div className={styles.experienceInfo}>
+                  <p className={styles.infoList}>
+                    - Caretaker <span className={styles.facilityName}>Greverud Sykehjem</span>
+                    <br />
+                    <span className={styles.descTime}>2022 JUL - 2022 AUG</span>
+                    <br />
+                    <br />- Technical Support <span className={styles.facilityName}>Intility</span>
+                    <br />
+                    <span className={styles.experienceDesc}>Department: Setup</span>
+                    <br />
+                    <span className={styles.descTime}>2022 OKT - 2022 NOV</span>
+                    <br />
+                    <br />- Caretaker <span className={styles.facilityName}>Greverud Sykehjem</span>
+                    <br />
+                    <span className={styles.descTime}>2022 DEC - 2022 DEC</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
           </Draggable>
         ) : null}
         {education ? (
           <Draggable>
-          <div className={`${drag === "education" ? styles.dragged : null} ${grab === "education" ? styles.grab : null} ${styles.educationContainer}`} onMouseDownCapture={() => {setDrag("education"); setGrab("education");}} onMouseUpCapture={() => setGrab("")}>
-            <div className={styles.educationHeader}>
-              <img className={styles.educationIMG} src={educationIMG} alt="Education" />
-              <p>Education</p>
-              <img className={styles.educationCloseIMG} src={close} alt="Close" onClick={() => setEducation(!education)} />
-            </div>
-            <div className={styles.educationInfoContainer}>
-              <div className={styles.educationInfo}>
-                <p className={styles.educationList}>
-                  - Year 1 Information Technology & Media<br/> <span className={styles.schoolName}>Drømtorp VGS</span>
-                  <br />
-                  <span className={styles.educationTime}>2020 AUG - 2021 JUN</span>
-                  <br /><br/>
-                  - Year 2 Information Technology<br/> <span className={styles.schoolName}>Drømtorp VGS</span>
-                  <br />
-                  <span className={styles.educationTime}>2021 AUG - NOW</span>
-                  <br />
-                </p>
+            <div
+              className={`${drag === "education" ? styles.dragged : null} ${grab === "education" ? styles.grab : null} ${styles.educationContainer}`}
+              onMouseDownCapture={() => {
+                setDrag("education");
+                setGrab("education");
+              }}
+              onMouseUpCapture={() => setGrab("")}
+            >
+              <div className={styles.pageHeader}>
+                <img className={styles.pageIMG} src={educationIMG} alt="Education" />
+                <p>Education</p>
+                <img className={styles.educationCloseIMG} src={close} alt="Close" onClick={() => setEducation(!education)} />
+              </div>
+              <div className={styles.infoContainer}>
+                <div className={styles.educationInfo}>
+                  <p className={styles.infoList}>
+                    - Year 1 Information Technology & Media
+                    <br /> <span className={styles.facilityName}>Drømtorp VGS</span>
+                    <br />
+                    <span className={styles.descTime}>2020 AUG - 2021 JUN</span>
+                    <br />
+                    <br />
+                    - Year 2 Information Technology
+                    <br /> <span className={styles.facilityName}>Drømtorp VGS</span>
+                    <br />
+                    <span className={styles.descTime}>2021 AUG - NOW</span>
+                    <br />
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
           </Draggable>
         ) : null}
         {projects ? (
           <Draggable>
-          <div className={`${drag === "projects" ? styles.dragged : null} ${grab === "projects" ? styles.grab : null} ${styles.projectsContainer}`} onMouseDownCapture={() => {setDrag("projects"); setGrab("projects");}} onMouseUpCapture={() => setGrab("")}>
-            <div className={styles.projectsHeader}>
-              <img className={styles.projectsIMG} src={projectsIMG} alt="Projects" />
-              <p>Education</p>
-              <img className={styles.projectsCloseIMG} src={close} alt="Close" onClick={() => setProjects(!projects)} />
-            </div>
-            <div className={styles.projectsInfoContainer}>
-              <div className={styles.projectsInfo}>
-                <p className={styles.projectsList}>
-                  - Year 1 Information Technology & Media<br/> <span className={styles.schoolName}>Drømtorp VGS</span>
-                  <br />
-                  <span className={styles.projectsTime}>2020 AUG - 2021 JUN</span>
-                  <br /><br/>
-                  - Year 2 Information Technology<br/> <span className={styles.schoolName}>Drømtorp VGS</span>
-                  <br />
-                  <span className={styles.projectsTime}>2021 AUG - NOW</span>
-                  <br />
-                </p>
+            <div
+              className={`${drag === "projects" ? styles.dragged : null} ${grab === "projects" ? styles.grab : null} ${styles.projectsContainer}`}
+              onMouseDownCapture={() => {
+                setDrag("projects");
+                setGrab("projects");
+              }}
+              onMouseUpCapture={() => setGrab("")}
+            >
+              <div className={styles.pageHeader}>
+                <img className={styles.pageIMG} src={projectsIMG} alt="Projects" />
+                <p>Projects</p>
+                <img className={styles.projectsCloseIMG} src={close} alt="Close" onClick={() => setProjects(!projects)} />
+              </div>
+              <div className={styles.infoContainer}>
+                <div className={styles.projectsInfo}>
+                  <p className={styles.infoList}>
+                    <a href="https://github.com/Ellipog/Forsinka" target="_blank" className={styles.invisLink}>
+                      - Forsinka
+                    </a>
+                    <br /> <span className={styles.facilityName}>Displays all delayed busses to a certain stop, based on the EnturAPI</span>
+                    <br /> <br />
+                    <a href="https://github.com/Ellipog/CC-Create-FarmInfo" target="_blank" className={styles.invisLink}>
+                      - FarmInfo
+                    </a>
+                    <br /> <span className={styles.facilityName}>Displays all data gathered from farms in game, collected using Lua</span>
+                    <br /> <br />
+                    <span className={styles.linksHeader}>Links:</span>
+                    <br />
+                    <a className={styles.links} href="https://github.com/Ellipog" target="_blank">
+                      <img src={github} /> &nbsp;GITHUB
+                    </a>
+                    <a className={styles.links} href="https://forsinka.chillcraft.co/" target="_blank">
+                      &thinsp;-&thinsp; FORSINKA
+                    </a>
+                    <br />
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </Draggable>
+        ) : null}
+        {contact ? (
+          <Draggable>
+            <div
+              className={`${drag === "contact" ? styles.dragged : null} ${grab === "contact" ? styles.grab : null} ${styles.contactContainer}`}
+              onMouseDownCapture={() => {
+                setDrag("contact");
+                setGrab("contact");
+              }}
+              onMouseUpCapture={() => setGrab("")}
+            >
+              <div className={styles.pageHeader}>
+                <img className={styles.pageIMG} src={contactIMG} alt="Contact" />
+                <p>Contact</p>
+                <img className={styles.contactCloseIMG} src={close} alt="Close" onClick={() => setContact(!contact)} />
+              </div>
+              <div className={styles.infoContainer}>
+                <div className={styles.contactInfo}>
+                  <p className={styles.infoList}>
+                    <span className={styles.contactHD}>CONTACT ME HERE:</span>
+                    <br />
+                    <br />
+                    <a className={styles.links} href="https://www.linkedin.com/in/elliot-strand-aaen/" target="_blank">
+                      <img src={linkedin} /> &nbsp;LINKEDIN
+                    </a>
+                    <a className={styles.links} href="mailto:elliotsaaen@gmail.com" target="_blank">
+                      <img src={mail} /> &nbsp;MAIL
+                    </a>
+                    <a className={styles.links} href="https://discord.com/users/323426171947581441" target="_blank">
+                      <img src={discord} /> &nbsp;DISCORD
+                    </a>
+                    <a className={styles.links} href="https://github.com/Ellipog" target="_blank">
+                      <img src={github} /> &nbsp;GITHUB
+                    </a>
+                    <br />
+                  </p>
+                </div>
+              </div>
+            </div>
           </Draggable>
         ) : null}
       </div>
@@ -150,14 +240,15 @@ function App() {
           <p>START</p>
         </div>
         <div className={styles.navbarElements}>
-          <img className={`${profile ? styles.activeNavbar : null} ${styles.personalNavbar}`} src={personal} alt="Personal" onClick={() => setProfile(!profile)} />
-          <img className={`${experience ? styles.activeNavbar : null} ${styles.experienceNavbar}`} src={experienceIMG} alt="Experience" onClick={() => setExperience(!experience)} />
-          <img className={`${education ? styles.activeNavbar : null} ${styles.educationNavbar}`} src={educationIMG} alt="Education" onClick={() => setEducation(!education)} />
-          <img className={`${projects ? styles.activeNavbar : null} ${styles.projectsNavbar}`} src={projectsIMG} alt="Projects" onClick={() => setProjects(!projects)} />
+          <img className={`${profile ? styles.activeNavbar : null} ${styles.navbarIcon}`} src={personal} alt="Personal" onClick={() => setProfile(!profile)} />
+          <img className={`${experience ? styles.activeNavbar : null} ${styles.navbarIcon}`} src={experienceIMG} alt="Experience" onClick={() => setExperience(!experience)} />
+          <img className={`${education ? styles.activeNavbar : null} ${styles.navbarIcon}`} src={educationIMG} alt="Education" onClick={() => setEducation(!education)} />
+          <img className={`${projects ? styles.activeNavbar : null} ${styles.navbarIcon}`} src={projectsIMG} alt="Projects" onClick={() => setProjects(!projects)} />
+          <img className={`${contact ? styles.activeNavbar : null} ${styles.navbarIcon}`} src={contactIMG} alt="Contact" onClick={() => setContact(!contact)} />
         </div>
         <div className={styles.navBarRight}>
           <div className={styles.time}>
-            <img src={shield} alt=""/>
+            <img src={shield} alt="Shield" />
             {hours}:{minutes}
           </div>
         </div>
