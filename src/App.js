@@ -5,6 +5,7 @@ import startLogo from "./img/startLogo.png";
 import personal from "./img/personal.png";
 import experienceIMG from "./img/experience.png";
 import educationIMG from "./img/education.png";
+import projectsIMG from "./img/projects.png";
 import shield from "./img/shield.png";
 import close from "./img/close.png";
 import elliotProfile from "./img/elliotProfile.jpg";
@@ -14,6 +15,7 @@ function App() {
   const [profile, setProfile] = useState(true);
   const [experience, setExperience] = useState(false);
   const [education, setEducation] = useState(false);
+  const [projects, setProjects] = useState(false);
   const [drag, setDrag] = useState("");
   const [grab, setGrab] = useState("");
 
@@ -116,6 +118,31 @@ function App() {
           </div>
           </Draggable>
         ) : null}
+        {projects ? (
+          <Draggable>
+          <div className={`${drag === "projects" ? styles.dragged : null} ${grab === "projects" ? styles.grab : null} ${styles.projectsContainer}`} onMouseDownCapture={() => {setDrag("projects"); setGrab("projects");}} onMouseUpCapture={() => setGrab("")}>
+            <div className={styles.projectsHeader}>
+              <img className={styles.projectsIMG} src={projectsIMG} alt="Projects" />
+              <p>Education</p>
+              <img className={styles.projectsCloseIMG} src={close} alt="Close" onClick={() => setProjects(!projects)} />
+            </div>
+            <div className={styles.projectsInfoContainer}>
+              <div className={styles.projectsInfo}>
+                <p className={styles.projectsList}>
+                  - Year 1 Information Technology & Media<br/> <span className={styles.schoolName}>Drømtorp VGS</span>
+                  <br />
+                  <span className={styles.projectsTime}>2020 AUG - 2021 JUN</span>
+                  <br /><br/>
+                  - Year 2 Information Technology<br/> <span className={styles.schoolName}>Drømtorp VGS</span>
+                  <br />
+                  <span className={styles.projectsTime}>2021 AUG - NOW</span>
+                  <br />
+                </p>
+              </div>
+            </div>
+          </div>
+          </Draggable>
+        ) : null}
       </div>
       <div className={styles.navBar}>
         <div className={styles.navBarLeft}>
@@ -126,6 +153,7 @@ function App() {
           <img className={`${profile ? styles.activeNavbar : null} ${styles.personalNavbar}`} src={personal} alt="Personal" onClick={() => setProfile(!profile)} />
           <img className={`${experience ? styles.activeNavbar : null} ${styles.experienceNavbar}`} src={experienceIMG} alt="Experience" onClick={() => setExperience(!experience)} />
           <img className={`${education ? styles.activeNavbar : null} ${styles.educationNavbar}`} src={educationIMG} alt="Education" onClick={() => setEducation(!education)} />
+          <img className={`${projects ? styles.activeNavbar : null} ${styles.projectsNavbar}`} src={projectsIMG} alt="Projects" onClick={() => setProjects(!projects)} />
         </div>
         <div className={styles.navBarRight}>
           <div className={styles.time}>
