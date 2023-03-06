@@ -259,7 +259,7 @@ function App() {
               <div className={styles.pageHeader}>
                 <img className={styles.pageIMG} src={skillsIMG} alt="Skills" />
                 <p>Skills</p>
-                <img className={styles.skillsCloseIMG} src={close} alt="Close" onClick={() => setContact(!skills)} />
+                <img className={styles.skillsCloseIMG} src={close} alt="Close" onClick={() => setSkills(!skills)} />
               </div>
               <div className={styles.infoContainer}>
                 <div className={styles.skillsInfo}>
