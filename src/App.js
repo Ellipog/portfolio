@@ -271,7 +271,7 @@ function App() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src={linkedin} /> &nbsp;LINKEDIN
+                      <img src={linkedin} alt="tempAlt" /> &nbsp;LINKEDIN
                     </a>
                     <a
                       className={styles.links}
@@ -279,7 +279,7 @@ function App() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src={mail} /> &nbsp;MAIL
+                      <img src={mail} alt="tempAlt" /> &nbsp;MAIL
                     </a>
                     <a
                       className={styles.links}
@@ -287,7 +287,7 @@ function App() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src={discord} /> &nbsp;DISCORD
+                      <img src={discord} alt="tempAlt" /> &nbsp;DISCORD
                     </a>
                     <a
                       className={styles.links}
@@ -295,7 +295,7 @@ function App() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src={github} /> &nbsp;GITHUB
+                      <img src={github} alt="tempAlt" /> &nbsp;GITHUB
                     </a>
                     <br />
                   </p>
@@ -383,7 +383,7 @@ function App() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src={github} /> &nbsp;GITHUB
+                      <img src={github} alt="tempAlt" /> &nbsp;GITHUB
                     </a>
                     <a
                       className={styles.links}
